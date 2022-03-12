@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "505889143267",
+    "project_id": "hirec-9bfa8",
+    "storage_bucket": "hirec-9bfa8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505889143267:android:1b8ff0a3370a233bbb08d6",
+        "android_client_info": {
+          "package_name": "com.twentyone24.HiREC"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505889143267-dhcv17o0ki17nuuhcj7loqs73oa92k3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_xSQeSdEnMOUtjGKwYY7yjUz8DiZBGn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505889143267-dhcv17o0ki17nuuhcj7loqs73oa92k3v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "505889143267-3bc7v6codahpq2okjl9f5mgu1o3pfq3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.twentyone24.HiREC"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
