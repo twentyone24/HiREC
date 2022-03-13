@@ -6,14 +6,12 @@ import '../Config/locator.dart';
 import '../Models/UserModel.dart';
 import '../Service/AuthBase.dart';
 import '../Service/repository.dart';
-import 'package:sweetsheet/sweetsheet.dart';
 
 enum ViewState { IDLE, BUSY }
 
 class UserViewModel extends ChangeNotifier implements AuthBase {
   ViewState _viewState = ViewState.IDLE;
   final Repository _repository = locator<Repository>();
-  final SweetSheet _sweetSheet = SweetSheet();
 
   UserModel? _userModel;
   String? wrongEmailMessage;
@@ -86,27 +84,6 @@ class UserViewModel extends ChangeNotifier implements AuthBase {
           }
           return _userModel!;
         } else {
-          await_sweetSheet.show(
-            context: context,
-            title: const Text("Attention"),
-            description: const Text(
-                'This app can only be accessed within the Rajalakshmi Engineering college students. If you\'re, please continue with your college mail id.'),
-            color: SweetSheetColor.WARNING,
-            icon: Icons.portable_wifi_off,
-            positive: SweetSheetAction(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              title: 'OPEN SETTING',
-              icon: Icons.open_in_new,
-            ),
-            negative: SweetSheetAction(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              title: 'CANCEL',
-            ),
-          );
           return UserModel(userID: "", email: "");
         }
       } else {

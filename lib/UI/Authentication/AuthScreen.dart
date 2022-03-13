@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hirec/View Models/UserViewModel.dart';
 import '../../Models/UserModel.dart';
+import '../Home/HomeScreen.dart';
 import 'LoginScreen.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class AuthScreen extends StatelessWidget {
       if (_userViewModel.user == null || _userViewModel.user?.email == "") {
         return const LoginScreen();
       } else {
-        return const Text('LOGGED IN');
+        return const HomeScreen();
         // return HomeScreen(userModel: _userViewModel.user);
       }
     } else {
