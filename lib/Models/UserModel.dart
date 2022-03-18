@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
-  final String userID;
+  String userID;
   String email;
   String? username;
   String? profileURL;
@@ -34,5 +34,15 @@ class UserModel {
   String _createRandomNum() {
     int randomNum = Random().nextInt(999999);
     return randomNum.toString();
+  }
+}
+
+getField(doc, field) {
+  try {
+    return (doc.data() as Map).containsKey(field)
+        ? (doc.data() as Map)[field]
+        : null;
+  } catch (e) {
+    return null;
   }
 }

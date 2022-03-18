@@ -38,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: Padding(
+      body: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
+        Padding(
           padding: const EdgeInsets.symmetric(vertical: 3.0),
           child: Column(
             children: [
@@ -57,11 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              const BottomScanButton(),
             ],
           ),
         ),
-      ),
+        Column(
+          children: const [
+            Spacer(),
+            BottomScanButton(),
+          ],
+        ),
+      ]),
     );
   }
 }

@@ -14,26 +14,21 @@ class PrimaryButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: (56),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-            gradient: ThemeColors.themeGradient,
-            borderRadius: BorderRadius.circular(20)),
-        child: TextButton(
-          style: TextButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            primary: Colors.white,
-            // backgroundColor: ThemeColors.green,
-          ),
-          onPressed: press as void Function()?,
-          child: Text(
-            text!,
-            style: textStyle ??
-                const TextStyle(
-                  fontSize: (18),
-                  color: Colors.white,
-                ),
-          ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          primary: Colors.white,
+          backgroundColor: ThemeColors.green,
+        ),
+        onPressed: press as void Function()?,
+        child: Text(
+          text!,
+          style: textStyle ??
+              const TextStyle(
+                fontSize: (18),
+                color: Colors.white,
+              ),
         ),
       ),
     );

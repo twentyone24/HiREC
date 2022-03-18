@@ -33,6 +33,11 @@ dependencies:
   get_it: ^4.0.4
   font_awesome_flutter: ^8.8.1
   sweetsheet: ^0.4.0
+  path_provider: ^2.0.9
+  barcode_scan2: ^4.2.0
+  url_launcher: ^6.0.5
+  fluttertoast: ^8.0.9
+  firebase_messaging: ^7.0.3
 
 dev_dependencies:
   flutter_test:
