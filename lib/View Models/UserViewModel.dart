@@ -82,6 +82,7 @@ class UserViewModel extends ChangeNotifier implements AuthBase {
           if (kDebugMode) {
             print("userModel signInWithGoogle at UserViewModel $_userModel");
           }
+          _repository.saveUser(_userModel!);
           return _userModel!;
         } else {
           return UserModel(userID: "", email: "");

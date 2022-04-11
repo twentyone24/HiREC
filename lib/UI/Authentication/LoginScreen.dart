@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
   void _signInWithGoogle(BuildContext context) async {
     final _userViewModel = Provider.of<UserViewModel>(context, listen: false);
     try {
-      UserModel _user = await _userViewModel.signInWithGoogle(context);
+      UserModel _ = await _userViewModel.signInWithGoogle(context);
     } on PlatformException catch (e) {
       if (kDebugMode) {
         print("signInWithGoogle Error :" + e.message.toString());

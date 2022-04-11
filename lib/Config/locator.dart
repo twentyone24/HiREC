@@ -1,5 +1,4 @@
 import 'package:get_it/get_it.dart';
-import '../Service/MockAuthService.dart';
 import '../Service/FirebaseAuthService.dart';
 import '../Service/FirestoreDatabaseService.dart';
 import '../Service/repository.dart';
@@ -9,7 +8,6 @@ GetIt locator = GetIt.I;
 
 void setupLocator() {
   locator.registerLazySingleton(() => FirebaseAuthService());
-  locator.registerLazySingleton(() => MockAuthService());
   locator.registerLazySingleton(() => FirestoreDatabaseService());
   locator.registerLazySingleton(() => Repository());
   locator.registerLazySingleton(() => UserViewModel());

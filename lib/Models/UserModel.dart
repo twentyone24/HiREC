@@ -8,8 +8,9 @@ class UserModel {
   String? profileURL;
   DateTime? createdAt;
   DateTime? updatedAt;
+  int usingCycle;
 
-  UserModel({required this.userID, required this.email});
+  UserModel({required this.userID, required this.email, this.usingCycle = 0});
 
   Map<String, dynamic> toMap() {
     return {
@@ -20,6 +21,7 @@ class UserModel {
       'profileURL': profileURL ?? 'https://via.placeholder.com/150',
       'createdAt': createdAt ?? FieldValue.serverTimestamp(),
       'updatedAt': updatedAt ?? FieldValue.serverTimestamp(),
+      'usingCycle': usingCycle,
     };
   }
 
@@ -29,7 +31,8 @@ class UserModel {
         username = map['username'],
         profileURL = map['profileURL'],
         createdAt = (map['createdAt'] as Timestamp).toDate(),
-        updatedAt = (map['updatedAt'] as Timestamp).toDate();
+        updatedAt = (map['updatedAt'] as Timestamp).toDate(),
+        usingCycle = map['usingCycle'];
 
   String _createRandomNum() {
     int randomNum = Random().nextInt(999999);

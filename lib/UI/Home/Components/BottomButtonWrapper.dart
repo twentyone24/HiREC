@@ -1,6 +1,7 @@
 import 'package:barcode_scan2/barcode_scan2.dart';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -23,23 +24,31 @@ class _BottomScanButtonState extends State<BottomScanButton> {
     } on PlatformException catch (ex) {
       if (ex.code == BarcodeScanner.cameraAccessDenied) {
         setState(() {
-          print("CAMERA permission denied!");
+          if (kDebugMode) {
+            print("CAMERA permission denied!");
+          }
           // result = "CAMERA permission denied!";
         });
       } else {
         setState(() {
-          print("$ex Error occurred.");
+          if (kDebugMode) {
+            print("$ex Error occurred.");
+          }
           // result = "$ex Error occurred.";
         });
       }
     } on FormatException {
       setState(() {
-        print("Nothing scanned!");
+        if (kDebugMode) {
+          print("Nothing scanned!");
+        }
         // result = "Nothing scanned!";
       });
     } catch (ex) {
       setState(() {
-        print("$ex Error occured.");
+        if (kDebugMode) {
+          print("$ex Error occured.");
+        }
         // result = "$ex Error occured.";
       });
     }
