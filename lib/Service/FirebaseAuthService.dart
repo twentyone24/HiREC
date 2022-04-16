@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../Models/UserModel.dart';
 import 'AuthBase.dart';
@@ -61,6 +62,11 @@ class FirebaseAuthService implements AuthBase {
         return _userFromFirebase(_user);
       } else {
         // TODO: show popup
+        Fluttertoast.showToast(
+            msg: "Only College MailID access is allowed.",
+            toastLength: Toast.LENGTH_LONG,
+            timeInSecForIosWeb: 4);
+        signOut();
         return UserModel(userID: "", email: "");
       }
     } else {

@@ -15,11 +15,14 @@ class BottomScanButton extends StatefulWidget {
 }
 
 class _BottomScanButtonState extends State<BottomScanButton> {
+  late ScanResult result;
+
   Future _scanQR() async {
     try {
       ScanResult qrResult = await BarcodeScanner.scan();
       setState(() {
-        // result = qrResult;
+        result = qrResult;
+        handleQRData();
       });
     } on PlatformException catch (ex) {
       if (ex.code == BarcodeScanner.cameraAccessDenied) {
@@ -100,5 +103,11 @@ class _BottomScanButtonState extends State<BottomScanButton> {
             ],
           )),
     );
+  }
+
+  void handleQRData() {
+
+    
+
   }
 }

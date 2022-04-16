@@ -39,6 +39,7 @@ dependencies:
   fluttertoast: ^8.0.9
   firebase_messaging: ^7.0.3
   lottie: ^1.2.2
+  flutter_fast_forms: ^0.1.0
 
 dev_dependencies:
   flutter_test:
