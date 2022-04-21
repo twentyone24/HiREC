@@ -14,7 +14,7 @@ class NoRentalsBuilder extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Lottie.asset(
-            'assets/lottie/invite_friends.json',
+            'assets/lottie/cycle.json',
             repeat: true,
             reverse: false,
             animate: true,

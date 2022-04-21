@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'Config/locator.dart';
 import 'UI/Authentication/AuthScreen.dart';
+import 'UI/Home/FormScreen.dart';
 import 'View Models/UserViewModel.dart';
 
 void main() async {

@@ -19,7 +19,6 @@ class FirebaseAuthService implements AuthBase {
   Future<UserModel> currentUser() async {
     try {
       User _user = _firebaseAuth.currentUser;
-
       return _userFromFirebase(_user);
     } catch (e) {
       if (kDebugMode) {
@@ -33,7 +32,6 @@ class FirebaseAuthService implements AuthBase {
   Future<bool> signOut() async {
     try {
       await _googleSignIn.signOut();
-
       await _firebaseAuth.signOut();
       return true;
     } catch (e) {

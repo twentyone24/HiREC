@@ -40,6 +40,10 @@ dependencies:
   firebase_messaging: ^7.0.3
   lottie: ^1.2.2
   flutter_fast_forms: ^0.1.0
+  flutter_svg: ^1.0.3
+  paytm_allinonesdk: ^1.1.5
+  shared_preferences: ^2.0.13
+  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:

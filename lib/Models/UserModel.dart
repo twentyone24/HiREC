@@ -2,15 +2,16 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
-  String userID;
-  String email;
+  String userID = "";
+  String email = "-";
   String? username;
   String? profileURL;
   DateTime? createdAt;
   DateTime? updatedAt;
-  int usingCycle;
+  int usingCycle = 0;
+  DateTime? usingUntil;
 
-  UserModel({required this.userID, required this.email, this.usingCycle = 0});
+  UserModel({this.userID = "", this.email = "-", this.usingCycle = 0});
 
   Map<String, dynamic> toMap() {
     return {
@@ -22,6 +23,7 @@ class UserModel {
       'createdAt': createdAt ?? FieldValue.serverTimestamp(),
       'updatedAt': updatedAt ?? FieldValue.serverTimestamp(),
       'usingCycle': usingCycle,
+      'usingUntil': usingUntil ?? FieldValue.serverTimestamp(),
     };
   }
 
@@ -37,6 +39,17 @@ class UserModel {
   String _createRandomNum() {
     int randomNum = Random().nextInt(999999);
     return randomNum.toString();
+  }
+
+  UserModel.fromFirebaseDoc(DocumentSnapshot doc) {
+    userID = getField(doc, "userID");
+    email = getField(doc, "email");
+    username = getField(doc, "username");
+    profileURL = getField(doc, "profileURL");
+    createdAt = getField(doc, "createdAt") ?? true;
+    updatedAt = getField(doc, "updatedAt");
+    usingCycle = getField(doc, "usingCycle");
+    usingUntil = getField(doc, "usingUntil");
   }
 }
 
